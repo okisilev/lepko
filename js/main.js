@@ -14,9 +14,18 @@
     lastFocus = doc.activeElement;
     sheet.hidden = false;
     doc.body.classList.add('lock');
+
+    var tip = $('#sheetTip');
+    if (tip) {
+      // Возвращаем понятную инструкцию
+      tip.textContent = 'Нажмите на мессенджер — текст скопируется в буфер. Вставьте его в чат (долгое нажатие → Вставить).';
+    }
+
     var first = $('.slink', sheet);
     if (first) first.focus();
   }
+
+
   function closeSheet() {
     sheet.hidden = true;
     doc.body.classList.remove('lock');
@@ -38,7 +47,7 @@
     }
   });
 
-  /* ---------- Копирование и Поделиться ---------- */
+  /* ---------- Копирование ---------- */
   function toast(text) {
     var t = doc.createElement('div');
     t.className = 'toast'; t.setAttribute('role', 'status'); t.textContent = text;
@@ -62,33 +71,16 @@
     return Promise.resolve(legacyCopy(text));
   }
 
-  // Обработка кликов по кнопкам мессенджеров
+  // Обработка кликов по кнопкам мессенджеров (просто копируем и переходим)
   $$('[data-copy]', sheet).forEach(function (a) {
     a.addEventListener('click', function (e) {
-      // Проверяем, поддерживает ли устройство Web Share API
-      if (navigator.share) {
-        e.preventDefault(); // Отменяем стандартный переход по ссылке
-        navigator.share({
-          title: 'Запись в студию «Лепко»',
-          text: current // Передаем наш сформированный текст
-        }).then(function () {
-          // Пользователь успешно отправил (или закрыл меню)
-        }).catch(function (err) {
-          // Если произошла ошибка или пользователь отменил, копируем в буфер
-          if (err.name !== 'AbortError') {
-            copy(current).then(function (ok) {
-              if (ok) toast('Текст скопирован. Вставьте его в чат.');
-            });
-          }
-        });
-      } else {
-        // Фолбэк для старых устройств (копируем в буфер и переходим по ссылке)
-        copy(current).then(function (ok) {
-          if (ok) {
-            toast('Текст скопирован. Вставьте его в чат (долгое нажатие → Вставить)');
-          }
-        });
-      }
+      // Копируем текст в буфер
+      copy(current).then(function (ok) {
+        if (ok) {
+          toast('Текст скопирован. Вставьте его в чат.');
+        }
+      });
+      // Переход по ссылке (e.preventDefault() НЕ вызываем, чтобы ссылка сработала)
     });
   });
 
