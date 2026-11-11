@@ -18,8 +18,6 @@ User-agent: Google-Extended
 Allow: /
 User-agent: YandexGPT
 Allow: /
-
-# DeepSeek и Qwen (Alibaba)
 User-agent: DeepSeekBot
 Allow: /
 User-agent: Qwenbot
