@@ -11,18 +11,27 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="geo.region" content="RU-IRK">
   <meta name="geo.placename" content="Иркутск">
-  <link rel="canonical" href="https://lepko-irkutsk.ru/">
+  
+  <!-- Канонический URL (сейчас GitHub Pages, потом замените на домен) -->
+  <link rel="canonical" href="https://okisilev.github.io/lepko/">
   <meta name="robots" content="index, follow, max-image-preview:large">
 
+  <!-- Open Graph (для Telegram, WhatsApp, VK) -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Студия керамики «Лепко»">
   <meta property="og:title" content="«Лепко» — студия керамики в центре Иркутска">
-  <meta property="og:description"
-    content="Гончарный круг, лепка из глины, глазурь, свидания и праздники. Без опыта — преподаватель рядом.">
-  <meta property="og:url" content="https://lepko-irkutsk.ru/">
-  <meta property="og:image" content="https://lepko-irkutsk.ru/img/og-image.jpg">
+  <meta property="og:description" content="Гончарный круг, лепка из глины, глазурь, свидания и праздники. Без опыта — преподаватель рядом на каждом этапе.">
+  <meta property="og:url" content="https://okisilev.github.io/lepko/">
+  <meta property="og:image" content="https://okisilev.github.io/lepko/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="«Лепко» — студия керамики в Иркутске">
+  <meta name="twitter:description" content="Гончарный круг, лепка, глазурь, свидания. Иркутск, Киевская, 1.">
+  <meta name="twitter:image" content="https://okisilev.github.io/lepko/img/og-image.jpg">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -34,29 +43,71 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Микроразметка Schema.org (LocalBusiness + FAQPage) -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Студия керамики «Лепко»",
-  "image": "https://lepko-irkutsk.ru/img/og-image.jpg",
-  "url": "https://lepko-irkutsk.ru/",
-  "telephone": "+7-964-111-13-17",
-  "priceRange": "600–11900 ₽",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ул. Киевская, 1",
-    "addressLocality": "Иркутск",
-    "addressCountry": "RU"
-  },
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "10:00",
-    "closes": "22:00"
-  }]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://okisilev.github.io/lepko/#studio",
+        "name": "Студия керамики «Лепко»",
+        "alternateName": ["Лепко", "Lepko", "lepko_irkutsk"],
+        "description": "Студия керамики в центре Иркутска: мастер-классы на гончарном круге и по ручной лепке, глазурные мастер-классы, гончарные свидания, семейные и детские занятия, дни рождения, корпоративы, аренда студии, подарочные талоны.",
+        "url": "https://okisilev.github.io/lepko/",
+        "image": "https://okisilev.github.io/lepko/img/og-image.jpg",
+        "telephone": "+7-964-111-13-17",
+        "priceRange": "600–11900 ₽",
+        "currenciesAccepted": "RUB",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Киевская, 1",
+          "addressLocality": "Иркутск",
+          "addressRegion": "Иркутская область",
+          "postalCode": "664003",
+          "addressCountry": "RU"
+        },
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "10:00",
+          "closes": "22:00"
+        }],
+        "sameAs": [
+          "https://www.instagram.com/lepko_irkutsk/",
+          "https://t.me/lepko_irkutsk",
+          "https://vk.ru/lepko_irkutsk",
+          "https://max.ru/id381295404790_biz"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Мастер-классы и услуги",
+          "itemListElement": [
+            {"@type":"Offer","name":"Групповой мастер-класс по керамике","price":"2500","priceCurrency":"RUB"},
+            {"@type":"Offer","name":"Индивидуальный мастер-класс (1–2 человека)","price":"3500","priceCurrency":"RUB","description":"от 3 500 ₽"},
+            {"@type":"Offer","name":"Глазурный мастер-класс","price":"600","priceCurrency":"RUB","description":"600–800 ₽"},
+            {"@type":"Offer","name":"Гончарное свидание «Создаём вместе»","price":"5500","priceCurrency":"RUB"},
+            {"@type":"Offer","name":"Семейный мастер-класс до 4 человек","price":"8500","priceCurrency":"RUB"},
+            {"@type":"Offer","name":"Праздники и корпоративы","price":"11900","priceCurrency":"RUB","description":"от 11 900 ₽"},
+            {"@type":"Offer","name":"Аренда студии","price":"1500","priceCurrency":"RUB","description":"от 1 500 ₽ в час"},
+            {"@type":"Offer","name":"Подарочный талон на лепку","price":"1000","priceCurrency":"RUB","description":"от 1 000 ₽, действует год"}
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type":"Question","name":"Нужен ли опыт, чтобы прийти на мастер-класс по керамике?","acceptedAnswer":{"@type":"Answer","text":"Нет. Большинство гостей садятся за гончарный круг впервые. Преподаватель показывает каждое движение и помогает руками, если что-то не выходит."}},
+          {"@type":"Question","name":"Когда можно забрать изделие?","acceptedAnswer":{"@type":"Answer","text":"Изделие сначала сохнет, затем проходит обжиг. Если вы были на глазурном мастер-классе — ещё и глазурный обжиг при 1040° около 12 часов. Точную дату готовности скажет администратор, а мы напишем, когда работа будет ждать вас."}},
+          {"@type":"Question","name":"Что взять с собой?","acceptedAnswer":{"@type":"Answer","text":"Ничего. Глина, инструменты, глазури и фартуки есть в студии, все материалы включены в стоимость. Лучше прийти в удобной одежде и с короткими ногтями, если планируете гончарный круг."}},
+          {"@type":"Question","name":"Можно ли прийти с ребёнком?","acceptedAnswer":{"@type":"Answer","text":"Да. Семейный мастер-класс рассчитан на группу до 4 человек любого возраста, каждый делает своё изделие. Детские дни рождения тоже проводим."}},
+          {"@type":"Question","name":"Где находится студия керамики «Лепко»?","acceptedAnswer":{"@type":"Answer","text":"В центре Иркутска, на улице Киевской, 1. Работаем ежедневно с 10:00 до 22:00 по предварительной записи."}},
+          {"@type":"Question","name":"Как записаться?","acceptedAnswer":{"@type":"Answer","text":"Позвоните по номеру 8 (964) 111-13-17 или напишите в MAX, Instagram или ВКонтакте. Групповые занятия идут по расписанию, индивидуальные и свидания — в любое удобное время."}}
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
